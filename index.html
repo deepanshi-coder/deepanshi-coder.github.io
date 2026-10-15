@@ -1,202 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Deepanshi Sharma — Software Developer</title>
-<meta name="description" content="Deepanshi Sharma — Computer Science student & developer portfolio." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deepanshi Sharma — Full-Stack & AI Developer for Hire</title>
+<style>
+:root{--bg:#fbfaf7;--sf:#fff;--tx:#17171c;--mu:#62626e;--bd:#e4e2da;--ac:#6d4aff;--ac2:#e8590c;--ok:#12a150;--glow:rgba(109,74,255,.12);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d12;--sf:#16161d;--tx:#f1f0f5;--mu:#9a99a8;--bd:#272733;--ac:#a58bff;--ac2:#ff8a4c;--ok:#3ddc84;--glow:rgba(165,139,255,.14);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d0d12;--sf:#16161d;--tx:#f1f0f5;--mu:#9a99a8;--bd:#272733;--ac:#a58bff;--ac2:#ff8a4c;--ok:#3ddc84;--glow:rgba(165,139,255,.14);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+#glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(var(--glow),transparent 65%);pointer-events:none;transform:translate(-50%,-50%);z-index:0;left:50%;top:30%}
+a{color:inherit;text-decoration:none}
+.w{max-width:1040px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:31;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-weight:800;letter-spacing:-.02em}.logo b{color:var(--ac)}
+.links{display:flex;gap:18px;align-items:center;font-size:14px;color:var(--mu)}
+.links a:hover{color:var(--tx)}
+@media(max-width:640px){.links a.h{display:none}}
+button{font:inherit;cursor:pointer;color:inherit}
+.ib{background:none;border:1px solid var(--bd);border-radius:999px;width:34px;height:34px}
+section{padding:72px 0}
+.eyebrow{font:600 12px/1 ui-monospace,Menlo,monospace;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+h1{font-size:clamp(2.3rem,7vw,4.4rem);line-height:1.04;letter-spacing:-.035em;margin:10px 0 18px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.025em;margin:0 0 28px;line-height:1.15}
+.lead{color:var(--mu);font-size:1.12rem;max-width:620px}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--bd);background:var(--sf);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--mu)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:p 2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 8px transparent}}
+.btn{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:600;border:1px solid var(--bd);background:var(--sf);transition:.2s}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#fff}
+.btn:hover{transform:translateY(-2px)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:44px}
+.st{border:1px solid var(--bd);background:var(--sf);border-radius:14px;padding:16px}
+.st b{display:block;font-size:1.7rem;letter-spacing:-.02em}.st span{font-size:13px;color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{border:1px solid var(--bd);background:var(--sf);border-radius:16px;padding:22px;transition:.25s}
+.card:hover{border-color:var(--ac);transform:translateY(-3px)}
+.card .ic{font-size:26px;margin-bottom:10px}
+.card h3{margin:0 0 6px;font-size:1.1rem}.card p{margin:0;color:var(--mu);font-size:.95rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tab{border:1px solid var(--bd);background:var(--sf);border-radius:999px;padding:8px 16px;font-size:14px}
+.tab.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.proj{border:1px solid var(--bd);background:var(--sf);border-radius:20px;padding:24px;margin-bottom:20px;transition:.3s}
+.proj.hide{display:none}
+.ph{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.proj h3{margin:0;font-size:1.35rem;letter-spacing:-.02em}
+.tag{font:12px ui-monospace,Menlo,monospace;border:1px solid var(--bd);border-radius:6px;padding:3px 8px;color:var(--mu);margin:3px 4px 0 0;display:inline-block}
+.proj>p{color:var(--mu);margin:10px 0 14px}
+.pl{display:flex;gap:16px;margin-top:16px;font-weight:600;font-size:14px}.pl a{color:var(--ac)}
+.demo{margin-top:16px;border:1px dashed var(--bd);border-radius:14px;padding:16px;background:var(--bg)}
+.dl{font:600 11px/1 ui-monospace,Menlo,monospace;color:var(--ac2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--bd);background:var(--sf);border-radius:999px;padding:7px 13px;font-size:13px}
+.chip:hover{border-color:var(--ac)}
+.chat{min-height:92px;font-size:14px}
+.q{font-weight:600;margin-bottom:8px}
+.a{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:12px;line-height:1.5}
+.cite{display:inline-block;font:11px ui-monospace,Menlo,monospace;color:var(--ac);background:var(--glow);border-radius:5px;padding:2px 6px;margin-top:6px}
+.cur{display:inline-block;width:7px;height:14px;background:var(--ac);animation:b 1s steps(2) infinite;vertical-align:middle}
+@keyframes b{50%{opacity:0}}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.pill{border:1px solid var(--bd);border-radius:999px;padding:5px 12px;font-size:12px;color:var(--mu);transition:.3s}
+.pill.on{background:var(--ac);color:#fff;border-color:var(--ac)}.pill.ok.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.log{font:12px/1.7 ui-monospace,Menlo,monospace;color:var(--mu);margin-top:12px;max-height:120px;overflow:auto}
+.log div::before{content:"› ";color:var(--ac)}
+.bars div{display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center;font:12px ui-monospace,Menlo,monospace;margin:7px 0}
+.bars i{display:block;height:9px;border-radius:5px;background:linear-gradient(90deg,var(--ac),var(--ac2));width:0;transition:width 1s}
+.bars span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.steps .card::before{counter-increment:s;content:"0" counter(s);font:700 13px ui-monospace,monospace;color:var(--ac);display:block;margin-bottom:8px}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.sk{border:1px solid var(--bd);background:var(--sf);border-radius:10px;padding:8px 14px;font-size:14px;transition:.2s}
+.sk:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
+.contact{text-align:center;border:1px solid var(--bd);background:var(--sf);border-radius:28px;padding:56px 24px}
+.contact h2{margin-bottom:12px}.contact .cta{justify-content:center}
+footer{padding:28px 0;color:var(--mu);font-size:13px;text-align:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<div id="glow"></div>
+<nav><div class="w">
+<a class="logo" href="#top">deepanshi<b>_31</b></a>
+<div class="links"><a class="h" href="#services">Services</a><a href="#work">Work</a><a class="h" href="#process">Process</a><a href="#contact">Hire me</a><button class="ib" id="th" aria-label="Toggle theme">◐</button></div>
+</div></nav>
 
-<nav class="nav">
-  <a href="#top" class="nav__logo">~/Deepanshi-Sharma</a>
-  <div class="nav__links">
-    <a href="#projects">projects</a>
-    <a href="#stack">stack</a>
-    <a href="#education">education</a>
-    <a href="#contact" class="nav__cta">contact</a>
-  </div>
-</nav>
+<header id="top" class="w" style="padding-top:64px">
+<span class="badge"><i class="dot"></i> Available for freelance projects</span>
+<h1>I build <em id="rot">web apps</em><br>that actually work.</h1>
+<p class="lead">Full-stack &amp; AI developer (React, Node.js, Python). I turn messy ideas into clean, working products and clear, well-written content — with honest communication and no surprises.</p>
+<div class="cta"><a class="btn p" href="#contact">Start a project →</a><a class="btn" href="#work">See my work</a><a class="btn" href="https://deepanshi-coder.github.io/DeepanshiResume.pdf" target="_blank" rel="noopener">Résumé</a></div>
+<div class="stats">
+<div class="st"><b data-n="500" data-s="+">0</b><span>LeetCode problems</span></div>
+<div class="st"><b data-n="4600" data-s="+">0</b><span>commits analysed in DebtSense</span></div>
+<div class="st"><b data-n="4" data-s="">0</b><span>projects shipped</span></div>
+<div class="st"><b data-n="2" data-s="">0</b><span>hackathons</span></div>
+</div>
+</header>
 
-<main>
+<section id="services"><div class="w rv">
+<div class="eyebrow">What I do</div><h2>How I can help your business</h2>
+<div class="grid">
+<div class="card"><div class="ic">🌐</div><h3>Full-stack web apps</h3><p>React frontends with Node.js + MongoDB/PostgreSQL backends — dashboards, portals, booking and management tools.</p></div>
+<div class="card"><div class="ic">🤖</div><h3>AI &amp; RAG chatbots</h3><p>Chatbots that answer from <i>your</i> documents with source citations, so answers are traceable, not made up.</p></div>
+<div class="card"><div class="ic">⚙️</div><h3>APIs &amp; backends</h3><p>Clean REST APIs with validation, role-based access, audit trails and safe database transactions.</p></div>
+<div class="card"><div class="ic">📊</div><h3>ML &amp; data tools</h3><p>Python pipelines for prediction, analysis and reporting — turning raw data into decisions.</p></div>
+<div class="card"><div class="ic">✍️</div><h3>Content writing</h3><p>Technical blogs, tutorials, README &amp; API documentation, website copy and AI/tech explainers — clear, accurate and easy to read.</p></div>
+</div></div></section>
 
-  <!-- HERO: terminal window signature element -->
-  <section class="hero" id="top">
-    <div class="terminal">
-      <div class="terminal__bar">
-        <div class="terminal__dots">
-          <span></span><span></span><span></span>
-        </div>
-        <span class="terminal__title">about-me.js</span>
-      </div>
-      <div class="terminal__body">
-        <pre class="terminal__code"><code><span class="tok-kw">const</span> <span class="tok-var">developer</span> = {
-  <span class="tok-key">name</span>: <span class="tok-str">"Deepanshi Sharma"</span>,
-  <span class="tok-key">role</span>: <span class="tok-str" id="typed-role">SDE Intern Aspirant</span><span class="cursor">|</span>,
-  <span class="tok-key">stack</span>: [<span class="tok-str">"React"</span>, <span class="tok-str">"Node.js"</span>, <span class="tok-str">"MongoDB"</span>],
-  <span class="tok-key">status</span>: <span class="tok-str tok-success">"open to internships"</span>,
-};</code></pre>
-      </div>
-    </div>
+<section id="work"><div class="w">
+<div class="eyebrow rv">Selected work</div><h2 class="rv">Projects you can play with</h2>
+<div class="tabs rv" id="tabs"><button class="tab on" data-f="all">All</button><button class="tab" data-f="ai">AI / ML</button><button class="tab" data-f="web">Web</button><button class="tab" data-f="api">Backend</button></div>
 
-    <div class="hero__text">
-      <h1>I turn ideas into<br/>working web apps.</h1>
-      <p>Computer Science student specializing in AI &amp; Machine Learning, with hands-on experience building MERN stack applications and ML-driven systems. Actively looking for a Software Development Engineer internship.</p>
-      <div class="hero__actions">
-        <a href="#projects" class="btn btn--primary">View projects</a>
-        <a href="DeepanshiResume.pdf" class="btn btn--ghost">Download résumé</a>
-      </div>
-    </div>
-  </section>
+<article class="proj rv" data-c="ai">
+<div class="ph"><h3>Policy RAG Assistant</h3><div><span class="tag">Python</span><span class="tag">TF-IDF</span><span class="tag">BM25</span></div></div>
+<p>A chatbot that answers employee questions from real policy documents and cites the exact section. Hybrid search (TF-IDF + BM25), category filtering, follow-up memory and a feedback loop. Extractive answers mean zero hallucination.</p>
+<div class="demo"><div class="dl">Try it — real outputs from the project</div>
+<div class="chips" id="rchips"></div><div class="chat" id="chat"><span style="color:var(--mu)">Tap a question to see how it answers…</span></div></div>
+<div class="pl"><a href="https://github.com/deepanshi-coder/RAG-Policy-Assistant" target="_blank" rel="noopener">View code ↗</a></div>
+</article>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <span class="eyebrow">// ABOUT</span>
-    <p class="about__text">
-      I'm a detail-oriented Computer Science student specializing in Artificial Intelligence &amp; Machine Learning, with a
-      strong base in Java, Data Structures &amp; Algorithms, and the MERN stack. I enjoy hands-on AI-driven application
-      development and actively compete in hackathons to solve real-world problems with practical technology. I'm a
-      quick learner with strong problem-solving instincts, currently looking for a Software Development Engineer
-      internship where I can contribute and keep growing.
-    </p>
-  </section>
+<article class="proj rv" data-c="api">
+<div class="ph"><h3>Expense Reimbursement API</h3><div><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Zod</span></div></div>
+<p>Employees submit expenses, managers approve or reject. Multi-currency totals, an append-only audit log, and row-level locking so the same expense can never be claimed twice.</p>
+<div class="demo"><div class="dl">Try it — walk a request through the workflow</div>
+<div class="flow"><span class="pill on" id="s1">draft</span>→<span class="pill" id="s2">pending</span>→<span class="pill ok" id="s3">approved</span></div>
+<div style="font-size:14px;margin-bottom:12px">Expense: <b>€120</b> (Tom, EUR) + <b>₹4,000</b> (Asha, INR) → <b id="tot">—</b> <span style="color:var(--mu)">(demo rates)</span></div>
+<div class="chips"><button class="chip" id="b1">Employee: Submit</button><button class="chip" id="b2">Manager: Approve</button><button class="chip" id="b3">Manager: Reject</button><button class="chip" id="b4">Reset</button></div>
+<div class="log" id="log"><div>expense created (draft)</div></div></div>
+<div class="pl"><a href="https://github.com/deepanshi-coder/Expense-Reimbursement" target="_blank" rel="noopener">View code ↗</a></div>
+</article>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <span class="eyebrow">// PROJECTS</span>
-    <h2>Selected work</h2>
+<article class="proj rv" data-c="ai">
+<div class="ph"><h3>DebtSense — Bug-Risk Predictor</h3><div><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">PyDriller</span></div></div>
+<p>Predicts which files in a codebase are most likely to have future bugs using only git history. Analysed 4,600+ commits; RandomForest with a temporal train/test split to avoid data leakage.</p>
+<div class="demo"><div class="dl">Illustrative risk report (sample data)</div><div class="bars" id="bars"></div></div>
+<div class="pl"><a href="https://github.com/deepanshi-coder/DebtSense" target="_blank" rel="noopener">View code ↗</a></div>
+</article>
 
-    <div class="project-grid">
+<article class="proj rv" data-c="web">
+<div class="ph"><h3>PathPilot AI</h3><div><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div>
+<p>A career guidance app for CS students: role-specific roadmaps (AI Engineer, Web Developer, Data Scientist), a career comparison tool and curated learning resources.</p>
 
-      <article class="project-card">
-        <div class="project-card__head">
-          <span class="project-card__lang"><i class="dot dot--js"></i>JavaScript</span>
-          <div class="project-card__links">
-            <a href="https://s39zwqn15w.c38.airoapp.ai/" aria-label="Live demo" target="_blank" rel="noopener">Live ↗</a>
-          </div>
-        </div>
-        <h3>PathPilot AI</h3>
-        <p>A career guidance web app that helps CS students choose structured learning paths based on their academic year and goals — with role-specific roadmaps (AI Engineer, Web Developer, Data Scientist), a career comparison tool, and curated resources for self-learning.</p>
-        <ul class="project-card__tags">
-          <li>React.js</li><li>Node.js</li><li>MongoDB</li>
-        </ul>
-      </article>
+</article>
+</div></section>
 
-      <article class="project-card">
-        <div class="project-card__head">
-          <span class="project-card__lang"><i class="dot dot--py"></i>Python ML</span>
-          <div class="project-card__links">
-            <a href="https://github.com/deepanshi-coder/DebtSense" aria-label="GitHub repo" target="_blank" rel="noopener">Repo ↗</a>
-          </div>
-        </div>
-        <h3>DebtSense — AI Code Health &amp; Bug-Risk Predictor</h3>
-        <p>A Python ML pipeline that predicts which files in a codebase are most likely to have future bugs, using nothing but git commit history.</p>
-        <ul class="project-card__steps">
-          <li>Mines commit history with PyDriller (4,600+ commits analyzed)</li>
-          <li>Engineers features like code churn, author count, and commit frequency</li>
-          <li>Trains a RandomForest classifier with a temporal train/test split — features from past commits, labels from future bug-fixes, to avoid data leakage</li>
-          <li>Outputs a color-coded CLI report ranking the riskiest files</li>
-        </ul>
-        <ul class="project-card__tags">
-          <li>Python</li><li>Machine Learning</li>
-        </ul>
-      </article>
+<section id="process"><div class="w rv">
+<div class="eyebrow">How we work</div><h2>Simple, transparent process</h2>
+<div class="steps">
+<div class="card"><h3>Discuss</h3><p>You share the idea; I ask the right questions and define scope.</p></div>
+<div class="card"><h3>Plan</h3><p>Clear milestones and timeline before any code is written.</p></div>
+<div class="card"><h3>Build</h3><p>Regular updates and working demos, not a surprise at the end.</p></div>
+<div class="card"><h3>Deliver</h3><p>Tested code, documentation and a handover you can understand.</p></div>
+</div></div></section>
 
-    </div>
-  </section>
+<section><div class="w rv">
+<div class="eyebrow">Toolbox</div><h2>Tech I work with</h2>
+<div class="skills"><span class="sk">React.js</span><span class="sk">Node.js</span><span class="sk">Express</span><span class="sk">MongoDB</span><span class="sk">PostgreSQL</span><span class="sk">MySQL</span><span class="sk">Python</span><span class="sk">scikit-learn</span><span class="sk">RAG / NLP</span><span class="sk">Java</span><span class="sk">JavaScript</span><span class="sk">HTML/CSS</span><span class="sk">Git &amp; GitHub</span><span class="sk">Technical writing</span><span class="sk">Blog &amp; web copy</span><span class="sk">Documentation</span></div>
+</div></section>
 
-  <!-- STACK -->
-  <section class="stack" id="stack">
-    <span class="eyebrow">// STACK</span>
-    
+<section id="contact"><div class="w rv"><div class="contact">
+<div class="eyebrow">Let's talk</div>
+<h2>Have a project in mind?</h2>
+<p class="lead" style="margin:0 auto">Tell me what you want to build. I'll reply with questions, a rough plan and a timeline.</p>
+<div class="cta"><a class="btn p" href="mailto:deepanshi.sharma2023@glbajajgroup.org?subject=Project%20inquiry">Email me</a><button class="btn" id="cp">Copy email</button><a class="btn" href="https://www.linkedin.com/in/deepanshi-sharma31/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/deepanshi-coder" target="_blank" rel="noopener">GitHub</a></div>
+</div></div></section>
+<footer>© Deepanshi Sharma · B.Tech CSE (AI &amp; ML), G.L. Bajaj, Mathura</footer>
 
-    <div class="stack-grid">
-      <div class="stack-group">
-        <h4>Web-Dev/</h4>
-        <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React.js</li></ul>
-      </div>
-      <div class="stack-group">
-        <h4>Backend &amp; data/</h4>
-        <ul><li>Node.js</li><li>MongoDB</li><li>MySQL</li></ul>
-      </div>
-      <div class="stack-group">
-        <h4>Languages &amp; other/</h4>
-        <ul><li>Java</li><li>Python</li><li>AI/ML</li><li>OOPs</li><li>Git/GitHub</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="education" id="education">
-    <span class="eyebrow">// EDUCATION</span>
-    
-
-    <div class="edu-list">
-      <div class="edu-item">
-        <div class="edu-item__head">
-          <h4>B.Tech, Computer Science (AI &amp; Machine Learning)</h4>
-          <span class="edu-item__date">2023 – 2027</span>
-        </div>
-        <p>G.L. Bajaj Group of Institutions, Mathura — Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
-        <span class="edu-item__meta">GPA: 8.07</span>
-      </div>
-
-      <div class="edu-item">
-        <div class="edu-item__head">
-          <h4>Class XII</h4>
-          <span class="edu-item__date">2023</span>
-        </div>
-        <p>Central Board of Secondary Education</p>
-        <span class="edu-item__meta">Percentage: 82.6%</span>
-      </div>
-
-      <div class="edu-item">
-        <div class="edu-item__head">
-          <h4>Class X</h4>
-          <span class="edu-item__date">2021</span>
-        </div>
-        <p>Central Board of Secondary Education</p>
-        <span class="edu-item__meta">Percentage: 92.4%</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section class="achievements" id="achievements">
-    <span class="eyebrow">// ACHIEVEMENTS</span>
-  
-
-    <ul class="achievement-list">
-      <li>Solved 500+ problems on LeetCode</li>
-      <li>SQL Certifications by HackerRank — Beginner, Intermediate, Advanced</li>
-      <li>Participated in Quark National Hackathon — G.L. Bajaj Group of Institutions, Mathura</li>
-      <li>Participated in HackSpire 36-hr Hackathon — Indeprastha Engineering College, Ghaziabad</li>
-    </ul>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <span class="eyebrow">// CONTACT</span>
-    <h2>Let's build something.</h2>
-    <p>Open to full-stack roles, freelance work, or just a good conversation about software.</p>
-    <div class="contact__links">
-      <a href="mailto:deepanshi.sharma2023@glbajajgroup.org" class="btn btn--primary">deepanshi.sharma2023@glbajajgroup.org</a>
-      <a href="https://www.linkedin.com/in/deepanshi-sharma31/" class="btn btn--ghost" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/deepanshi-coder" class="btn btn--ghost" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <span>© <span id="year"></span> Deepanshi Sharma</span>
-  <span class="footer__built">built with HTML, CSS, JS — no framework needed</span>
-</footer>
-
-<script src="script.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// theme
+$('#th').onclick=()=>{const d=document.documentElement,dark=getComputedStyle(d).colorScheme==='dark';d.dataset.theme=dark?'light':'dark'};
+// glow follows pointer
+addEventListener('pointermove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+// rotating words
+const words=['web apps','AI chatbots','REST APIs','ML tools'];let wi=0;
+setInterval(()=>{wi=(wi+1)%words.length;const r=$('#rot');r.style.opacity=0;setTimeout(()=>{r.textContent=words[wi];r.style.opacity=1},250)},2400);
+$('#rot').style.transition='opacity .25s';
+// reveal + counters + bars
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+$$('[data-n]').forEach(el=>{const n=+el.dataset.n;let c=0;const t=setInterval(()=>{c+=Math.ceil(n/40);if(c>=n){c=n;clearInterval(t)}el.textContent=c.toLocaleString()+el.dataset.s},30)});
+const risk=[['payment_service.js',92],['auth/session.py',81],['utils/parser.py',67],['models/order.js',48],['config.py',22]];
+$('#bars').innerHTML=risk.map(r=>`<div><span>${r[0]}</span><i data-w="${r[1]}"></i><span>${r[1]}%</span></div>`).join('');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){$$('#bars i').forEach(i=>i.style.width=i.dataset.w+'%');o.disconnect()}})).observe($('#bars'));
+// project filter
+$$('.tab').forEach(t=>t.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('on',x===t));$$('.proj').forEach(p=>p.classList.toggle('hide',t.dataset.f!=='all'&&p.dataset.c!==t.dataset.f))});
+// RAG demo
+const qa=[
+['Daily meal cap for domestic travel?','Daily meal reimbursement is capped at $75 per day for domestic travel and $100 per day for international travel.','expense_policy.md · 3. Meals and Entertainment'],
+['Can I expense a gym membership?','The following are never reimbursable: parking or traffic fines, personal entertainment, spa or gym services, personal grooming, and lost personal property.','expense_policy.md · 5. Non-Reimbursable Expenses'],
+['How much PTO do I get?','Full-time employees accrue 20 days of paid time off (PTO) per year, accrued monthly.','employee_handbook.md · 3. Leave Policy'],
+['Dress code on Fridays?','I could not find sufficient information in the provided policy documents to answer this.','']];
+$('#rchips').innerHTML=qa.map((q,i)=>`<button class="chip" data-i="${i}">${q[0]}</button>`).join('');
+let tm;$$('#rchips .chip').forEach(c=>c.onclick=()=>{const [q,a,s]=qa[c.dataset.i];clearInterval(tm);const ch=$('#chat');ch.innerHTML=`<div class="q">${q}</div><div class="a"><span id="tx"></span><span class="cur"></span><div id="ct"></div></div>`;let i=0;tm=setInterval(()=>{$('#tx').textContent=a.slice(0,++i);if(i>=a.length){clearInterval(tm);$('.cur').remove();if(s)$('#ct').innerHTML=`<span class="cite">[Doc: ${s}]</span>`}},14)});
+// Expense demo
+let st='draft';const log=m=>{const d=document.createElement('div');d.textContent=m;$('#log').prepend(d)};
+const rate={EUR:1.08,INR:0.012},usd=(120*rate.EUR+4000*rate.INR).toFixed(2);
+const paint=()=>{['draft','pending','approved'].forEach((s,i)=>$('#s'+(i+1)).classList.toggle('on',s===st));$('#tot').textContent=st==='draft'?'—':'$'+usd+' (USD base)'};
+$('#b1').onclick=()=>{if(st!=='draft')return log('blocked: already submitted — duplicate prevented');st='pending';log('submitted → totals converted to USD (rows locked)');paint()};
+$('#b2').onclick=()=>{if(st!=='pending')return log('blocked: nothing pending to approve');st='approved';log('manager approved · audit entry written');paint()};
+$('#b3').onclick=()=>{if(st!=='pending')return log('blocked: nothing pending to reject');st='draft';log('manager rejected → expenses back to draft, request kept for audit');paint()};
+$('#b4').onclick=()=>{st='draft';$('#log').innerHTML='<div>expense created (draft)</div>';paint()};
+paint();
+// links: sandboxed previews can block new tabs / mailto, so fall back to copying
+const toast=m=>{let t=$('#toast');if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:60;max-width:90vw;text-align:center';document.body.appendChild(t)}t.textContent=m;t.style.display='block';clearTimeout(t.h);t.h=setTimeout(()=>t.style.display='none',3500)};
+const copy=async v=>{try{await navigator.clipboard.writeText(v);return true}catch(e){const x=document.createElement('textarea');x.value=v;document.body.appendChild(x);x.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}x.remove();return ok}};
+const EM='deepanshi.sharma2023@glbajajgroup.org';
+$('#cp').onclick=async()=>toast(await copy(EM)?'Email copied: '+EM:'Email: '+EM);
+$$('a[target=_blank]').forEach(a=>a.addEventListener('click',async e=>{e.preventDefault();const w=window.open(a.href,'_blank','noopener');if(!w)toast(await copy(a.href)?'Link copied — paste it in your browser':a.href)}));
+$$('a[href^=mailto]').forEach(a=>a.addEventListener('click',async()=>{setTimeout(async()=>toast(await copy(EM)?'Email copied: '+EM:'Email: '+EM),300)}));
+</script>
 </body>
 </html>
